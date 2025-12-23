@@ -102,6 +102,7 @@ print_procs(FILE *fd)
       switch_colors("Active Processes: ");
     else 
       fprintf(fd, "\tActive Processes: ");
+ 
     if(fprintf(fd, "%hu", PROCESSES) < 0)
       fprintf(stderr, "Couldn't display processes");
 
@@ -129,6 +130,7 @@ print_times(FILE* fd)
       switch_colors("Date & Time: ");
     else
       fprintf(fd, "\tDate & Time: ");
+
     if(fprintf(fd, "%s", strip_newline(currt)) < 0)
       fprintf(stderr, "Couldn't display datetime");
 
@@ -145,6 +147,7 @@ print_times(FILE* fd)
       switch_colors("System Uptime: ");
     else 
       fprintf(fd, "\tSystem Uptime: ");
+  
     if(fprintf(fd, "%.2lu:%.2lu:%.2lu:%.2lu (d, h, m & s)",
       DAYS,
       HOURS,
@@ -174,6 +177,7 @@ print_memory(FILE* fd)
       switch_colors("Available RAM: ");
     else  
       fprintf(fd, "\tAvailable RAM: ");
+
     if(fprintf(fd, "%luMiB (of %luMiB)", FREE_RAM, TOTAL_RAM) < 0)
       fprintf(stderr, "Couldn't display RAM");
 
@@ -190,6 +194,7 @@ print_memory(FILE* fd)
       switch_colors("Available Swap: ");
     else 
       fprintf(fd, "\tAvailable Swap: ");
+
     if(fprintf(fd, "%luMiB (of %luMiB)", FREE_SWAP, TOTAL_SWAP) < 0)
       fprintf(stderr, "Couldn't display Swap");
 
@@ -219,10 +224,8 @@ print_cpu(FILE *fd)
 
     if(!res)
     {
-
       fprintf(stderr, "\tCouldn't allocate memory");
       exit(EXIT_FAILURE);
-
     }
 
     static const char *sub = "model name";
@@ -280,10 +283,8 @@ print_kernel(FILE *fd)
 
       if(!kern)
       {
-
         fprintf(stderr, "Couldn't allocate memory");
         exit(EXIT_FAILURE); 
-
       }
 
       static const char *sub = "Linux";
@@ -291,27 +292,26 @@ print_kernel(FILE *fd)
       while (fgets(kern, kern_size, fp) != NULL)
         if(strstr(kern, sub) != NULL)
         {
- 
           char *ver = strstr(kern, "version");
  
           size_t len = sizeof("version");
 
           if (ver)
           {
-              if(colors.toggle)
-                switch_colors("Kernel: ");
-              else 
-                fprintf(fd, "\tKernel: ");
-              if(fprintf(fd, "%s", ver+len) < 0)
-                fprintf(stderr, "Couldn't display Kernel version");
+            if(colors.toggle)
+              switch_colors("Kernel: ");
+            else 
+              fprintf(fd, "\tKernel: ");
+            if(fprintf(fd, "%s", ver+len) < 0)
+              fprintf(stderr, "Couldn't display Kernel version");
 
             separator(nlines);
-
-
           }
       }
+
             free(kern);
             fclose(fp);
+
     }
 
   }
@@ -336,11 +336,10 @@ print_user(FILE *fd)
     if(gethostname(host, sizeof(host)) == 0 && user != NULL)
     {
       if(colors.toggle)
-      {
         switch_colors("User: ");
-      }
       else
         fprintf(fd, "\tUser: ");
+
       if(fprintf(fd, "%s->%s", user->pw_name, host) < 0)
         fprintf(stderr, "Couldn't display hostname");
     }
@@ -437,9 +436,8 @@ strip_newline(char *str)
 {
     size_t len = strlen(str);
 
-    if (len > 0 && str[len - 1] == '\n') {
+    if (len > 0 && str[len - 1] == '\n') 
         str[len - 1] = ' ';
-    }
 
     return str;
 
@@ -466,11 +464,7 @@ fetch_time()
   time_t current_time;
 
 	if(time(&current_time) < 0)
-  {
-
     fprintf(stderr, "Couldn't retrieve time");
-
-  };
 
   char *r_time = ctime(&current_time);
 

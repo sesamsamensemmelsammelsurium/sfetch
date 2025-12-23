@@ -4,7 +4,7 @@ Specify either a pre-cofigured option or a path for your ASCII art image
 
 0 = "Linux", 1 = "OpenBSD", 2 = "Sfetch" or 3 for custom ascii art*/
 
-static ART ascii = 2;
+static ART ascii = 0;
 
 /*Your custom ascii art, change path to your liking. Not supposed to exceed 10 lines.*/
 
