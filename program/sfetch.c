@@ -145,7 +145,7 @@ print_times(FILE* fd)
       switch_colors("System Uptime: ");
     else 
       fprintf(fd, "\tSystem Uptime: ");
-    if(fprintf(fd, "%.2lu:%.2lu:%.2lu:%.2lu (days, hours, minutes & seconds)",
+    if(fprintf(fd, "%.2lu:%.2lu:%.2lu:%.2lu (d, h, m & s)",
       DAYS,
       HOURS,
       MINUTES,
