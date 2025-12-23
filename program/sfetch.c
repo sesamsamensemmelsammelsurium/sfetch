@@ -434,6 +434,7 @@ render_art(FILE* fd)
 char*
 strip_newline(char *str)
 {
+
     size_t len = strlen(str);
 
     if (len > 0 && str[len - 1] == '\n') 
@@ -504,28 +505,31 @@ colorize(const char* color, char* str)
 char* 
 switch_colors(char* str)
 {
-    switch(set_c)
-          {
-          case R:
-            colorize(RED, str);
-            break;
 
-          case G:
-            colorize(GREEN, str);
-            break;
+  switch(set_c)
+    {
+      case R:
+        colorize(RED, str);
+          break;
 
-          case B:
-            colorize(BLUE, str);
-            break;
-          case M:
-            colorize(MAGENTA, str);
-            break;
+      case G:
+        colorize(GREEN, str);
+        break;
 
-          default:
-            colorize(WHITE, str);
-            break;
+      case B:
+        colorize(BLUE, str);
+        break;
+
+      case M:
+        colorize(MAGENTA, str);
+        break;
+
+      default:
+        colorize(WHITE, str);
+        break;
 
         }
 
     return str;
+
 }
