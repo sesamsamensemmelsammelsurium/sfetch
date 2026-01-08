@@ -45,3 +45,7 @@ sfetch on CachyOS:</br>
 sfetch on Android over Termux:</br>
 
 ![SfetchTermux](sfetch_termux.jpg)
+
+sfetch with weather patch:</br>
+
+![SfetchWeatherpatch](weatherpatch.png)
