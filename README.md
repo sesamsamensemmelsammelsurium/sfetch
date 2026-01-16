@@ -1,6 +1,6 @@
 # sfetch
 
-sfetch is a simple, small and fast fetching utility without all the gobbledygook and with a clean and minimal interface. Probably not for visual enthusiasts in its vanilla state.
+sfetch (simple fetch) is a simple, small and fast fetching utility without all the gobbledygook and with a clean and minimal interface. Probably not for visual enthusiasts in its vanilla state.
 
 The vanilla program is as simple as it gets.
 
