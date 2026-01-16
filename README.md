@@ -10,6 +10,8 @@ Patches can be written and pushed to the repo, you're even encouraged to do so.
 
 Theres also still some minor work to do for the vanilla program, please refer to the TODO.md for further information.
 
+Remember: you can always tinker with the source code to change the programs behavior as we apply the suckless philosophy here: the source code is the configuration file. So if you're not lucky with some decisions or behavior, change it. There will be of course no support for applied personal changes. 
+
 # Build requirements
 
 - Linux system with glibc
