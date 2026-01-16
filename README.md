@@ -4,7 +4,7 @@ sfetch (simple fetch) is a simple, small and fast fetching utility without all t
 
 The vanilla program is as simple as it gets.
 
-Its still in early development (Version 0.1), so no patches are available, yet. 
+Its still in early development (Version 0.1). 
 
 Patches can be written and pushed to the repo, you're even encouraged to do so.
 
